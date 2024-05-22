@@ -30,5 +30,8 @@ module "ec2" {
   ec2_backup_role_name             = "${local.name_prefix}-ec2_backup_role_name"
   ec2_backups_bucket_name          = var.backups_bucket_name
   ec2_backup_instance_profile_name = "${local.name_prefix}-ec2_backup_instance_profile_name"
+  user_data = templatefile("${path.module}/../../modules/fxc-ec2/ec2-user-data.sh", {
+    s3_bucket_name = var.backups_bucket_name
+  })
 }
 

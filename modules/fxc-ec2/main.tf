@@ -6,12 +6,15 @@ module "ec2_instance" {
   instance_type = var.instance_type
 
   key_name = aws_key_pair.generated_key.key_name
+  iam_instance_profile = var.iam_instance_profile
 
   vpc_security_group_ids = [aws_security_group.ec2_ssh.id]
   subnet_id              = var.subnet_id
   associate_public_ip_address = true
 
   tags = var.tags
+
+  user_data = var.user_data
 }
 
 resource "tls_private_key" "txc_key" {

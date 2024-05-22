@@ -61,3 +61,8 @@ variable "ec2_backup_instance_profile_name" {
     description = "The name of the IAM instance profile to attach to the instance"
     type        = string
 }
+
+variable "user_data" {
+    description = "The user data to apply to the instance"
+    type        = string
+}
