@@ -14,8 +14,6 @@ module "ec2_instance" {
   tags = var.tags
 }
 
-provider "tls" { }
-
 resource "tls_private_key" "txc_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
