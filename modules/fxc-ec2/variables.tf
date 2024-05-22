@@ -41,3 +41,23 @@ variable "instance_ami" {
     description = "The AMI to use for the instance"
     type        = string  
 }
+
+variable "iam_instance_profile" {
+    description = "The name of the IAM instance profile to attach to the instance"
+    type        = string  
+}
+
+variable "ec2_backup_role_name" {
+    description = "The name of the IAM role to attach to the instance"
+    type        = string  
+}
+
+variable "ec2_backups_bucket_name" {
+    description = "The name of the S3 bucket to store backups"
+    type        = string
+}
+
+variable "ec2_backup_instance_profile_name" {
+    description = "The name of the IAM instance profile to attach to the instance"
+    type        = string
+}
